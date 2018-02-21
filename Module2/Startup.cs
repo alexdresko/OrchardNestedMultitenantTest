@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
+﻿using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebApplication16
+namespace Module2
 {
     public class Startup
     {
@@ -19,11 +14,6 @@ namespace WebApplication16
             services.AddSingleton(JavaScriptEncoder.Default);
             services.AddModules(collection =>
             {
-                //collection.WithTenants();
-                collection.Configure(serviceCollection =>
-                {
-
-                });
             });
 
         }
@@ -31,18 +21,7 @@ namespace WebApplication16
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseModules(builder =>
-            {
-                builder.Configure(applicationBuilder =>
-                {
-
-                });
-            });
+            app.UseModules();
         }
     }
 }

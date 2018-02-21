@@ -1,0 +1,16 @@
+﻿{
+  "Contoso": {
+    "State": "Running",
+    // "RequestUrlHost": "contoso.com",
+    "RequestUrlPrefix": "contoso",
+    "Features": [ "BasicModule" ],
+    "MyConnectionString": "connectionstring1"
+  },
+  "Acme": {
+    "State": "Running",
+    // "RequestUrlHost": "acme.com, acme.org",
+    "RequestUrlPrefix": "acme",
+    "Features": [ "BasicModule", "EMC", "EMC.ANI" ],
+    "MyConnectionString": "connectionstring2"
+  }
+}
